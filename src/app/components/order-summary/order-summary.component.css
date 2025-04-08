@@ -1,0 +1,115 @@
+.order-summary {
+  background-color: #F9EFE6;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  color: #401201;
+  font-family: 'Roboto', sans-serif;
+}
+
+.order-summary {
+  color: #8C5230;
+  text-align: center;
+}
+
+.order-summary h1 {
+  color: #401201;
+  font-weight: bold;
+  text-align: center;
+}
+
+.humor {
+  color: #D98A29;;
+}
+
+.instructions-no-table-selected {
+  font-family: 'Courier New', monospace; /* Da ese toque terminal */
+  background-color: #401201; /* Fondo oscuro */
+  color: #EBF1F2; /* Texto claro */
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  animation: pulse 3s infinite; /* Añade un efecto dinámico */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    background-color: #401201;
+  }
+  50% {
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.8);
+    background-color: #8C5230;
+  }
+}
+
+.order-summary p {
+  color: #401201;
+  text-align: center;
+}
+
+.order-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-content li {
+  /* separate the coffe name from the amount */
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0.7rem;
+  margin-bottom: 0.5rem;
+  background-color: #EBF1F2;
+  border: 1px solid #D98A29;
+  border-radius: 8px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.order-content .coffee-title {
+  font-weight: bold;
+  color: #401201;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.order-content .coffee-quantity {
+  font-weight: bold;
+  color: #D98A29;
+}
+
+
+.order-summary .empty-order {
+  font-weight: bold;
+  color: #BF8563;
+  text-align: center;
+}
+
+.delete-button {
+  margin: 0 auto;
+  /* button content disposition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  background-color: #D98A29;
+  color: #EBF1F2;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #8C5230;
+  color: #EBF1F2;
+}
+
+.buttons-container {
+  padding-top: 2rem;
+}

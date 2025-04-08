@@ -1,0 +1,16 @@
+@if (orderList.length > 0) {
+    <ul class="tables-list">
+        @for (order of orderList; track $index) {
+            <li>
+                <div class="table-container" (click)="onOrderClick(order)">
+                    <span class="material-icons">
+                        table_restaurant
+                    </span>
+                    <p>Table Nº {{order.tableId}}</p>
+                </div>
+            </li>
+        }
+    </ul>
+} @else {
+    <h3>No tables configured...</h3>
+}

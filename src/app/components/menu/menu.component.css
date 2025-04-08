@@ -1,0 +1,9 @@
+:host h2 {
+    text-align: center;
+}
+
+h2 {
+    color: #F9EFE6;
+    font-weight: bold;
+    margin: 0.5rem;
+}

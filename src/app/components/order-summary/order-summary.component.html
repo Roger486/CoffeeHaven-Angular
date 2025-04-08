@@ -1,0 +1,33 @@
+<div class="order-summary">
+    <h1>Order Summary</h1>
+    <p></p>
+
+    <div class="order-content">
+        @if (order.tableId === 0) {
+            <h2 class="humor">Espresso levels critical! Latte supplies running low!</h2>
+            <h2 class="instructions-no-table-selected">Select a table and start your order.</h2>
+        } @else if (order.orderItems.length > 0) {
+            <h2 class="table-id">Table number {{order.tableId}}</h2>
+            <ul>
+                @for (orderItem of order.orderItems; track $index) {
+                    <li>
+                        <span class="coffee-title">{{ orderItem.coffee.title }}</span>
+                        <span class="coffee-quantity">x{{ orderItem.quantity }}</span>
+                    </li>
+                }
+                <div class="buttons-container">
+                    <button class="delete-button" type="button" (click)="onDeleteOrderClick()">
+                        Delete order
+                        <span class="material-icons">backspace</span>
+                    </button>
+                </div>
+            </ul>
+        } @else {
+            <h2 class="table-id">Table number {{order.tableId}}</h2>
+            <h3 class="empty-order">Empty order, select a coffee to begin.</h3>
+    }
+    </div>
+    @if (order.tableId !== 0) {
+
+    }
+</div>

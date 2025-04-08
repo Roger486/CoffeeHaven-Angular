@@ -1,0 +1,17 @@
+
+@if (coffeeList.length > 0) {
+    <ul>
+        @for (coffee of coffeeList; track $index) {
+            <li>
+                <div class="card" title="{{coffee.title}}" (click)="onCoffeeClick(coffee)">
+                    <div class="img-container">
+                        <img src="{{coffee.image}}" alt="{{coffee.title}}">
+                    </div>
+                    <h3>{{coffee.title}}</h3>
+                </div>
+            </li>
+        }
+    </ul>
+} @else {
+    <h3>Loading menu...</h3>
+}

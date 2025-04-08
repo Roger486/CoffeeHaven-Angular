@@ -1,0 +1,32 @@
+<h2>Coffee Details</h2>
+
+<div class="coffee-details-container">
+    @if (coffee) {
+    <div class="coffee-info">
+        <img src="{{coffee.image}}" alt="{{coffee.title}}" />
+
+        <div class="coffee-text">
+            <p><strong>ID:</strong> {{ coffee.id }}</p>
+            <h3>{{ coffee.title }}</h3>
+            <p>{{ coffee.description }}</p>
+            <div class="coffee-ingredients">
+                <h4>Ingredients:</h4>
+                <ul>
+                    @for (ingredient of coffee.ingredients; track $index) {
+                    <li><span>{{ ingredient }}</span></li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    } @else {
+    <p class="error-message">Coffee not found.</p>
+    }
+
+    <button routerLink="/menu" class="back-button" type="button">
+        <span class="material-icons">arrow_back</span>
+        Back
+    </button>
+</div>
+

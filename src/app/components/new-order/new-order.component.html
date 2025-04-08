@@ -1,0 +1,46 @@
+
+<h2>Orders</h2>
+
+<div class="order-list-container">
+    <app-order-list 
+    [orderList]="orderList"
+    (orderClicked)="displayOrder($event)"
+    />
+</div>
+
+
+<div class="new-order-container">
+    <div class="coffee-list-container">
+        <app-coffee-list
+        [coffeeList]="coffeeList"
+        (coffeeClicked)="addToOrder($event)"
+        />
+    </div>
+    <div class="order-summary-container">
+        <app-order-summary [order]="order"
+        (deleteOrderClicked)="deleteOrder($event)"
+        />
+    </div>
+</div>
+
+<!--
+Comentario en castellano:
+este otro código usa el input para pasarle la función addToOrder() al hijo para que la ejecute él
+en lugar de recibir el dato el padre y trabajarlo. De esta forma se gana flexibilidad:
+** @Input: es más secillo de leer e implementar pero menos flexible ya que el hijo sólo puede ejecutar la función que le pasamos.
+** @Output: más flexible, el padre decide qué hacer con el dato y puede hacer más cosas con él además de ejecutar una función.
+-->
+<!-- 
+<h2>Orders</h2>
+<div class="new-order-container">
+    <div class="coffee-list-container">
+        <app-coffee-list
+        [coffeeList]="coffeeList"
+        [action]="addToOrder"
+        />
+    </div>
+    <div class="order-summary-container">
+        <app-order-summary [order]="order"/>
+    </div>
+</div>
+-->

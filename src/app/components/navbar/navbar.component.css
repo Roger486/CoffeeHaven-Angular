@@ -1,0 +1,38 @@
+
+.navbar {
+    background-color: #8C5230;
+    color: #EBF1F2;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 1rem;
+}
+
+.navbar .nav-link {
+    text-decoration: none;
+    color: #EBF1F2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space between icon and text */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: #D98A29;
+    transform: scale(1.1);
+}
+
+.material-icons {
+    font-size: 24px;
+    vertical-align: middle;
+}

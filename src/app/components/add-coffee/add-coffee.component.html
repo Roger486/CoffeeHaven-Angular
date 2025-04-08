@@ -1,0 +1,59 @@
+<div class="add-coffee-container">
+  <h1>Add a New Coffee</h1>
+
+  <form (ngSubmit)="onAddCoffee()" class="add-coffee-form">
+
+    <div class="form-field">
+      <label for="title">Title:</label>
+      <input 
+        id="title"
+        [(ngModel)]="newCoffee.title"
+        name="title" required 
+        placeholder="Enter a coffe name"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="newCoffee.description" 
+        name="description"
+        placeholder="Enter a brief description"
+        rows="6">
+      </textarea>
+    </div>
+
+    <div class="form-field ingredients-container">
+      <label>Ingredients:</label>
+      <div class="ingredients-input">
+        <input
+          [(ngModel)]="newIngredient"
+          placeholder="Add an ingredient"
+          name="newIngredient"
+          (keyup.enter)="addIngredient()"
+        />
+        <button class="add-ingredient-button" type="button" (click)="addIngredient()">
+          <span class="material-icons">add</span>
+          Add Ingredient
+        </button>
+      </div>
+      <ul class="ingredients-list">
+        @for (ingredient of newCoffee.ingredients; track $index) {
+          <li>
+            <span>{{ ingredient }}</span>
+            <button type="button" (click)="removeIngredient($index)">
+              <span class="material-icons">delete</span>
+            </button>
+          </li>
+        }
+      </ul>
+    </div>
+    <p [class.hidden]="!displaySubmitSuccessMessage" class="success-message hidden">Coffee added successfully!</p>
+    <p [class.hidden]="!displaySubmitErrorMessage" class="error-message hidden">Please you must input title, a brief description and at least one ingredient</p>
+    <button type="submit" class="submit-button">
+      <span class="material-icons">coffee</span>
+      Add Coffee
+    </button>
+  </form>
+</div>

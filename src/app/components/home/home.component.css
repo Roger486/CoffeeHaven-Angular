@@ -1,0 +1,30 @@
+.home-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: #EBF1F2;
+    color: #401201;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    color: #8C5230;
+    margin-bottom: 1rem;
+}
+
+.nordic-coffee-haven-logo {
+    width: 40%;
+    max-width: 300px;
+    border-radius: 50%;
+    border: 10px solid #401201;
+}
+
+p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.humor {
+    margin-top: 2rem;
+    color: #D98A29;
+    font-style: italic;
+}
