@@ -1,59 +1,74 @@
-# CoffeeShop
+# CoffeeHaven ☕
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+CoffeeHaven is a responsive Angular web application built as a practical project for the **Client-Side Development** module of a Vocational Education and Training (VET) program (Formación Profesional - DAW). It simulates an online coffee shop where users can browse products, manage orders, and navigate through an intuitive interface.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+- Component-based structure using Angular
+- Routing and navigation between pages
+- User authentication with route guards
+- Services for API communication and business logic
+- Modular folder organization (`components`, `services`, `models`, etc.)
+- Responsive UI with custom CSS
+
+## 🛠️ Tech Stack
+
+- **Angular** 19 (Angular CLI)
+- TypeScript
+- HTML & CSS
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed
+- Angular CLI installed globally
+
+```bash
+npm install -g @angular/cli
+```
+
+### Installation
+
+Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+### Running the Development Server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/` to view the app in your browser. The app will auto-reload if you make changes to the source files.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📁 Project Structure
 
-```bash
-ng generate component component-name
-```
+- `src/app/components`: Angular components
+- `src/app/services`: Business logic and API services
+- `src/app/models`: Interfaces and data types
+- `src/app/guards`: Route protection logic
+- `src/app/app.routes.ts`: Routing configuration
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 👨‍💻 Author
 
-## Building
+**Roger Navarro**  
+Student at [La Salle FP Online](https://lasallefponline.sallenet.org/) – Vocational Education Program (DAW - Client-Side Development)  
+🔗 GitHub: [https://github.com/Roger486](https://github.com/Roger486)
 
-To build the project run:
+Project developed for academic purposes.
 
-```bash
-ng build
-```
+## 📄 License
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This project is for educational purposes and is not intended for production use.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 👨‍🎓 Created for FP DAW — Client-Side Development
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Developed as part of a Vocational Training program to demonstrate modern front-end architecture using Angular.
