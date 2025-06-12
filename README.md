@@ -53,6 +53,36 @@ Navigate to `http://localhost:4200/` to view the app in your browser. The app wi
 - `src/app/guards`: Route protection logic
 - `src/app/app.routes.ts`: Routing configuration
 
+## 📦 Deployment (Docker + Nginx)
+
+This project includes a Dockerfile to build and serve the Angular application using Nginx, optimized for single-page applications (SPA).
+
+### 🐳 Build the Docker image
+
+```bash
+docker build -t coffeehaven-angular .
+```
+
+### 🚀 Run the container
+
+```bash
+docker run -d \
+  --name coffeehaven-web \
+  -p 8080:80 \
+  --restart unless-stopped \
+  coffeehaven-angular
+```
+
+Once the container is running, you can access the app at:
+
+- `http://localhost:8080` (if local)
+- Or your configured subdomain.
+
+### 📁 Nginx configuration
+
+The container uses a custom `nginx.conf` file to handle SPA routing (try_files $uri $uri/ /index.html).
+This ensures deep links and client-side routes work as expected.
+
 ---
 
 ## 👨‍💻 Author
