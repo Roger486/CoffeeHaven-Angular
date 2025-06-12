@@ -1,0 +1,29 @@
+name: Deploy CoffeeHaven to Raspberry Pi
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: SSH Deploy to Raspberry Pi
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.RASPI_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+      - name: Add known hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.RASPI_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy via SSH
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes ${{ secrets.RASPI_USER }}@${{ secrets.RASPI_HOST }} 'bash ~/projects/raspi-server/scripts/deploy/deploy-coffeehaven.sh'
